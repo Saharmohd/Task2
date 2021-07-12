@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Control of report </title>
+<meta charset="UTF-8">
+
+<style>
+body { background-image:url("repot.jpg"); background-repeat:no-repeat; background-size:1408px 865px}
+.control-arm {  position:absolute; border: solid 1px;  color:black;}
+.control-arm {margin: 30px 50px 0px; height:370px; width:250px;  background:#C3CDE6; border-radius:5px}
+.control-motion {margin: 30px 0px 0px 500px; height:370px; width:350px; border: solid 0px; }
+.pointup, .pointdown { margin: 0px 100px 0px;}
+.btn { background: white; border-radius:10px; padding:2px 15px 2px; 
+           font:center; float:center; }
+		   
+.btn:hover {  background: #0066FF; } #m { margin-left:55px}
+input[type=text] { border-radius:5px}
+button { background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit; }
+</style>
+
+<script>
+function textvalue(val) {
+t1= document.getElementById("t1").value;
+t2= document.getElementById("t2").value;
+t3=document.getElementById("t3").value;
+t4=document.getElementById("t4").value;
+t5=document.getElementById("t5").value;
+t6=document.getElementById("t6").value;
+if (val == t1)
+{ document.getElementById("text1").value=val;}
+else if (val==t2)
+{ document.getElementById("text2").value=val;}
+else if (val==t3)
+{ document.getElementById("text3").value=val;}
+else if (val==t4)
+{ document.getElementById("text4").value=val;}
+else if (val==t5)
+{ document.getElementById("text5").value=val;}
+else if (val==t6)
+{ document.getElementById("text6").value=val;}
+}
+</script>
+
+</head>
+<body>
+<form method="POST" action="reg.php">
+<fieldset class="control-arm">
+<legend><h4> التحكم في أذرع الروبورت</h4> </legend>
+<input type="text" maxlength="3" size="1" id="text1" > 
+<input type="range" min="0" max="180" id="t1"onchange="textvalue(this.value);" name="arm1"> محرك 1 <br><br>
+
+<input type="text" maxlength="3" size="1" id="text2" > 
+<input type="range" min="0" max="180" id="t2" onchange="textvalue(this.value);" name="arm2"> محرك 2 <br><br>
+
+<input type="text" maxlength="3" size="1" id="text3"  >
+ <input type="range" min="0" max="180" id="t3" onchange="textvalue(this.value);" name="arm3"> محرك 3 <br><br>
+ 
+<input type="text" maxlength="3" size="1" id="text4" > 
+<input type="range" min="0" max="180" id="t4" onchange="textvalue(this.value);" name="arm4"> محرك 4 <br><br>
+
+<input type="text" maxlength="3" size="1" id="text5" >
+ <input type="range" min="0" max="180" id="t5" onchange="textvalue(this.value);" name="arm5"> محرك 5 <br><br>
+ 
+<input type="text" maxlength="3" size="1" id="text6" > 
+<input type="range" min="0" max="180" id="t6" onchange="textvalue(this.value);" name="arm6"> محرك 6  <br><br>
+<br> 
+<button class="btn" id="m" name="on"> تشغيل  </button> <button name="save" class="btn"> حفظ </button>
+</fieldset>
+
+
+<fieldset class="control-motion">
+<legend><h4> التحكم في حركة إتجاة الروبورت</h4> </legend>
+<div>
+	<button name="pointup"><img src="pointing-up.png" alt="pointing-up" width="100" height="100" class="pointup"
+	/> </button>
+	
+	</div>
+	<div>
+		<button name="pointleft" ><img src="pointing-left.png" width="100" height="100" alt="pointing-left" /></button>
+	 
+		<button name="stop" ><img src="stop-button.png" width="100" height="100" alt="stop" > </button>
+	<button name="pointright" ><img src="pointing-right.png" width="100" height="100" alt="pointing-right" /></button>
+	</div>
+	<div>
+	<button name="pointdown" ><img src="pointing-down.png" width="100" height="100" alt="pointing-down" class="pointdown" /> </button>
+	</div>
+	</fieldset>
+
+</form>
+
+
+</body>
+</html>
